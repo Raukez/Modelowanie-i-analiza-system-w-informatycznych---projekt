@@ -16,7 +16,6 @@ class InputDialog(QDialog):
 
         layout = QVBoxLayout()
 
-        # Formularz
         form_layout = QFormLayout()
         self.input1 = QLineEdit()
         self.input2 = QLineEdit()
@@ -26,7 +25,6 @@ class InputDialog(QDialog):
 
         layout.addLayout(form_layout)
 
-        # Przyciski
         buttons = QDialogButtonBox(QDialogButtonBox.Ok | QDialogButtonBox.Cancel)
         buttons.accepted.connect(self.accept)
         buttons.rejected.connect(self.reject)
@@ -46,7 +44,6 @@ class InputDialog2(QDialog):
 
         layout = QVBoxLayout()
 
-        # Formularz
         form_layout = QFormLayout()
         self.input1 = QLineEdit()
         self.input2 = QLineEdit()
@@ -58,7 +55,6 @@ class InputDialog2(QDialog):
 
         layout.addLayout(form_layout)
 
-        # Przyciski
         buttons = QDialogButtonBox(QDialogButtonBox.Ok | QDialogButtonBox.Cancel)
         buttons.accepted.connect(self.accept)
         buttons.rejected.connect(self.reject)
@@ -247,7 +243,6 @@ class MainWindow(QMainWindow):
         self.setWindowTitle("Program")
         self.setGeometry(100, 100, 600, 400)
 
-        # Zmienne do przechowywania danych
         self.values_AB = {"A": "", "B": ""}
         self.values_CD = {"C": "", "D": "", "E": ""}
 
@@ -259,13 +254,10 @@ class MainWindow(QMainWindow):
 
         main_layout = QVBoxLayout()
 
-        # Górny rząd
         top_layout = QHBoxLayout()
 
-        # Lewa kolumna (przyciski 1,2,3,4)
         left_layout = QVBoxLayout()
 
-        # Przyciski 1 i 2
         self.button1 = QPushButton("1")
         self.button1.setFixedSize(120, 60)
         self.button1.clicked.connect(self.input_AB)
@@ -277,7 +269,6 @@ class MainWindow(QMainWindow):
         left_layout.addWidget(self.button1)
         left_layout.addWidget(self.button2)
 
-        # Przyciski 3 i 4 w jednym rzędzie
         bottom_buttons_layout = QHBoxLayout()
         self.button3 = QPushButton("3")
         self.button3.setFixedSize(80, 60)
@@ -291,7 +282,6 @@ class MainWindow(QMainWindow):
         bottom_buttons_layout.addWidget(self.button4)
         left_layout.addLayout(bottom_buttons_layout)
 
-        # Prawa kolumna (wyświetlacze 5 i 6)
         right_layout = QVBoxLayout()
 
         self.display5 = ArcDisplay("")
@@ -307,7 +297,6 @@ class MainWindow(QMainWindow):
         top_layout.addStretch()
         top_layout.addLayout(right_layout)
 
-        # Dolny wyświetlacz (7)
         self.display7 = ComplexDisplay("")
         self.display7.setFixedHeight(120)
 
